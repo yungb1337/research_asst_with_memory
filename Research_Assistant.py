@@ -33,7 +33,7 @@ topic = st.text_input("What is your Question")
 
 
 #Button Logic
-if st.button("Click Me!") and topic:
+if st.button("Ask Me!") and topic:
     messages = chat_prompt.format_messages(
     assistant = assistantP,
     topic= topic
@@ -53,6 +53,7 @@ if st.button("Click Me!") and topic:
 for msg in reversed(st.session_state.history):
     display_role = assistantP if msg["role"] == "assistant" else "You"
     st.markdown(f"**{display_role}:** {msg['content']}")
+
 
 
 
